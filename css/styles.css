@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 0;
+}
+
+main {
+    padding: 20px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.clickable {
+    cursor: pointer;
+}
+.clickable:hover {
+    background-color: #dde3dd;
+}
+
+img {
+    margin-top: 20px;
+    width: 150px;
+}
+.platforms .button-container {
+    margin-bottom: 20px; /* Ajusta este valor según el espacio que desees */
+}
+
+.platforms a {
+    display: block;
+    margin-bottom: 10px; /* Ajusta este valor según el espacio entre botones */
+}
+
+#windows-content img,
+#android-content img {
+    width: 100%; /* Ancho máximo del contenedor */
+    max-width: 500px; /* Ancho máximo permitido para la imagen */
+    margin-top: 20px; /* Espacio entre la imagen y el contenido */
+}
+
+/* Estilos adicionales para el contenido */
+#windows-content,
+#android-content {
+    display: none; /* Cambia "none" a "block" para que se muestre el contenido */
+}
+
+.selector {
+    margin-bottom: 20px; /* Espacio entre el selector y el contenido */
+}
+
+.selector select {
+    padding: 10px; /* Espaciado interior del selector */
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+/* Estilos adicionales para los títulos de los pasos */
+h4 {
+    margin-top: 10px; /* Margen superior de 10px para los títulos */
+}

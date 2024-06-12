@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>casa</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div>
+        <label for="language-select">Seleccione el idioma:</label>
+        <select id="language-select" onchange="changeLanguage(this.value)">
+            <option value="es">Español</option>
+            <option value="en">English</option>
+            <option value="ca">Catalan</option>
+        </select>
+    </div>
+    
+    <header id="step1">
+        <h1 data-key="step1_title">Paso 1: Instale su Certificado CA.</h1>
+    </header>
+    <main>
+        <p data-key="step1_ca">¿Que es un certificado CA?.</p>
+        <p data-key="step1_info" class="clickable">VER.</p>
+        <div id="step1_info_text" style="display: none;">
+            <p data-key="step1_info_text">Traducción.</p>
+        </div>
+        <p data-key="step1_desc">Haga clic en el botón de descarga para obtener el certificado.</p>
+        <a href="cert/cert.crt" download onclick="scrollToStep(2)">
+            <button data-key="download_cert">Descargar Certificado</button>
+        </a>
+        <p data-key="scan_qr">También Puede escanear el siguiente QR.</p>
+        <div>
+            <img src="qr/qr-cert.png" alt="QR Code certificado">
+        </div>
+    </main>
+    
+    <header id="step2">
+        <h1 data-key="step2_title">Paso 2: Instale el cliente WireGuard en sus dispositivos.</h1>
+    </header>
+    <main class="platforms">
+        <p data-key="select_platform">Seleccione su plataforma:</p>
+        <div class="button-container">
+            <a href="https://play.google.com/store/apps/details?id=com.wireguard.android" target="_blank" onclick="scrollToStep(3)">
+                <button data-key="download_from_playstore">Descargar WireGuard desde Play Store</button>
+            </a>
+            <div>
+                <img src="qr/qr-wireguard-play.png" alt="QR wireguard Android">
+            </div>
+        </div>
+        <div class="button-container">
+            <a href="https://www.wireguard.com/install/" target="_blank" onclick="scrollToStep(3)">
+                <button data-key="download_for_other">Descargar WireGuard para otras plataformas</button>
+            </a>
+            <div>
+                <img src="qr/qr-wireguard-otros.png" alt="QR wireguard otros">
+            </div>
+        </div>
+    </main>
+    
+    <header id="step3">
+        <h1 data-key="step3_title">Paso 3: Conéctese a su VPN.</h1>
+        <!-- Selector para seleccionar entre Windows y Android -->
+        <div class="selector">
+            <select id="platformSelector" onchange="showContent(this.value)" title="Seleccionar plataforma">
+                <option value="windows">Windows</option>
+                <option value="android">Android</option>
+            </select>
+        </div>
+        <!-- Contenido para Windows -->
+        <div id="windows-content">
+            <div>
+                <h4 data-key="step3w_installar">Paso 1: Instale el programa.</h4>
+                <img src="imagenes/windows-cliente/0-instalar.webp" alt="Windows Instalar">
+            </div>
+            <div>
+                <h4 data-key="step3w_importar">Paso 2: Presione el boton importar.</h4>
+                <img src="imagenes/windows-cliente/1-importar.webp" alt="Windows Importar">
+            </div>
+            <div>
+                <h4 data-key="step3w_fichero">Paso 3: Seleccione el fichero.</h4>
+                <img src="imagenes/windows-cliente/2-fichero.webp" alt="Windows fichero">
+            </div>
+            <div>
+                <h4 data-key="step3w_activar">Paso 4: Seleccione en Activar.</h4>
+                <img src="imagenes/windows-cliente/3-activar.webp" alt="Windows Activar">
+            </div>
+        </div>
+        <!-- Contenido para Android -->
+        <div id="android-content">
+            <div>
+                <h4 data-key="step3a_importar">Paso 1: Presione el boton + en la apliación.</h4>
+                <img src="imagenes/android/0-importar.webp" alt="Android importar">
+            </div>
+            <div>
+                <h4 data-key="step3a_qr">Paso 2: Escanee el QR creado con su servidor.</h4>
+                <img src="imagenes/android/1-qr.webp" alt="Android QR">
+            </div>
+            <div>
+                <h4 data-key="step3a_nombre">Paso 3: Guarde la configuración con un nombre.</h4>
+                <img src="imagenes/android/2-nombre.webp" alt="Android Nombre">
+            </div>
+            <div>
+                <h4 data-key="step3a_activar">Paso 4: Active la conexion con su VPN.</h4>
+                <img src="imagenes/android/3-activar.webp" alt="Android Activa">
+            </div>
+        </div>
+    </header>
+    <!-- Aquí puedes proporcionar instrucciones para conectarse a la VPN -->
+    
+    <script src="scripts/translations.js"></script>
+    <script src="scripts/script.js"></script>
+</body>
+</html>
