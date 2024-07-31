@@ -12,6 +12,23 @@ function changeLanguage(language) {
     });
 }
 
+// Funciones para los botones de descarga
+function downloadCert() {
+    document.getElementById('downloadCertLink').click();
+    scrollToStep(2);
+}
+
+function downloadWireGuardPlaystore() {
+    document.getElementById('downloadWireGuardPlaystoreLink').click();
+    scrollToStep(3);
+}
+
+function downloadWireGuardOther() {
+    document.getElementById('downloadWireGuardOtherLink').click();
+    scrollToStep(3);
+}
+
+
 // Establecer el idioma predeterminado
 document.addEventListener('DOMContentLoaded', () => {
     changeLanguage('es'); // Cambia a 'en' si prefieres que el idioma por defecto sea inglés
